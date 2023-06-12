@@ -13,7 +13,7 @@ function createPromise(position, delay) {
       }
     }, delay)
  },);
-};
+}; 
 
 const form = document.querySelector('.form');
 const inputDelay = form.querySelector('input[name=delay]');
