@@ -16,3 +16,46 @@ img {
   display: block;
   max-width: 100%;
 }
+
+.timer {
+  display: flex;
+  margin-top: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 80px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 0, 255, 0.15);
+  border-radius: 6%;
+  border: 2px solid rgb(255, 0, 255, 0.17);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.field:not(:first-child) {
+  margin-left: 10px;
+}
+
+.btn {
+  background-color: rgb(255, 0, 255, 0.15);
+  width: 136px;
+  margin-left: 10px;
+  border: 2px solid rgb(255, 0, 255, 0.17);
+  height: 30px;
+  font-size: 16px;
+  border-radius: 6%;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#datetime-picker {
+  background-color: rgb(255, 0, 255, 0.15);
+  height: 30px;
+  width: 200px;
+  text-align: center;
+  font-size: 16px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  border: 2px solid rgb(255, 0, 255, 0.17);
+  border-radius: 6%;
+}
