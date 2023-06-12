@@ -22,6 +22,8 @@ const inputAmount = form.querySelector('input[name=amount]');
 
 form.addEventListener('click', onStart);
 
+let delay;
+
 function onStart(e) {
   e.preventDefault();
 
