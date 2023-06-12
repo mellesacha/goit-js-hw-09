@@ -16,9 +16,9 @@ function createPromise(position, delay) {
 }; 
 
 const form = document.querySelector('.form');
-const inputDelay = form.querySelector('input[name=delay]');
-const inputStep = form.querySelector('input[name=step]');
-const inputAmount = form.querySelector('input[name=amount]');
+// const inputDelay = form.querySelector('input[name=delay]');
+// const inputStep = form.querySelector('input[name=step]');
+// const inputAmount = form.querySelector('input[name=amount]');
 
 form.addEventListener('click', onStart);
 
@@ -27,24 +27,43 @@ let delay;
 function onStart(e) {
   e.preventDefault();
 
-  const quantityProm = inputAmount.value;
-  const delayCreateProm = inputDelay.value;
-  const stepDelay = inputStep.value;
+  const amount = Number(form.elements.amount.value);
+  const firstDelay = Number(form.elements.delay.value);
+  const step = Number(form.elements.step.value);
 
-
-  for (let i = 1; i <= quantityProm; i++) {
+   for (let i = 1; i <= amount; i++) {
 
     if (i === 1) {
-      delay = Number(delayCreateProm);
+      delay = firstDelay;
     }
     else {
-      delay += Number(stepDelay);
+      delay += step;
     }
     
     createPromise(i, delay).then(onSuccess).catch(onError);
 
     e.currentTarget.reset();
   };
+
+
+  // const quantityProm = inputAmount.value;
+  // const delayCreateProm = inputDelay.value;
+  // const stepDelay = inputStep.value;
+
+
+  // for (let i = 1; i <= quantityProm; i++) {
+
+  //   if (i === 1) {
+  //     delay = Number(delayCreateProm);
+  //   }
+  //   else {
+  //     delay += Number(stepDelay);
+  //   }
+    
+  //   createPromise(i, delay).then(onSuccess).catch(onError);
+
+  //   e.currentTarget.reset();
+  // };
 }
 
 function onSuccess({ position, delay }) {
